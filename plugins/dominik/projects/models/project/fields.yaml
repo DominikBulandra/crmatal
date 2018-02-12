@@ -1,0 +1,29 @@
+fields:
+    notation:
+        label: Oznaczenie
+        oc.commentPosition: ''
+        span: full
+        type: text
+    nr_inwestycji:
+        label: 'Number inwestycji'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    city_id:
+        label: Dropdown
+        oc.commentPosition: ''
+        options:
+            1: Katowice
+            2: Kraków
+            3: Warszawa
+            4: Gdańsk
+            5: Łódź
+            6: Wrocław
+            7: Poznań
+        span: auto
+        type: dropdown
+    balcony_price_m2:
+        label: 'Cena balkonu'
+        span: auto
+        oc.commentPosition: ''
+        type: number

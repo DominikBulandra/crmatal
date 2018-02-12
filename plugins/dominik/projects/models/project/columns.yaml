@@ -1,0 +1,11 @@
+columns:
+    notation:
+        label: nazwa
+        type: text
+        searchable: true
+        sortable: true
+    nr_inwestycji:
+        label: nr
+        type: number
+        searchable: false
+        sortable: true

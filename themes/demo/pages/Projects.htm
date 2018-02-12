@@ -1,0 +1,15 @@
+title = "Projects"
+url = "/projects"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Dominik\Projects\Models\Project"
+scope = "-"
+displayColumn = "notation"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% component 'builderList' %}

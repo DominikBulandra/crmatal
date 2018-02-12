@@ -1,0 +1,11 @@
+plugin:
+    name: 'dominik.projects::lang.plugin.name'
+    description: 'dominik.projects::lang.plugin.description'
+    author: Dominik
+    icon: oc-icon-bank
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Projects
+        url: dominik/projects/projects
+        icon: icon-star

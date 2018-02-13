@@ -9,3 +9,8 @@ navigation:
         label: Projects
         url: dominik/projects/projects
         icon: icon-star
+        sideMenu:
+            side-menu-item:
+                label: Miasta
+                url: dominik/projects/cities
+                icon: icon-university

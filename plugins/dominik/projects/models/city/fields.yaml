@@ -1,0 +1,6 @@
+fields:
+    name:
+        label: Miasto
+        span: left
+        oc.commentPosition: ''
+        type: text

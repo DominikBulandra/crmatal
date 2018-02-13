@@ -1,0 +1,10 @@
+name: Cities
+form: $/dominik/projects/models/city/fields.yaml
+modelClass: Dominik\Projects\Models\City
+defaultRedirect: dominik/projects/cities
+create:
+    redirect: 'dominik/projects/cities/update/:id'
+    redirectClose: dominik/projects/cities
+update:
+    redirect: dominik/projects/cities
+    redirectClose: dominik/projects/cities

@@ -54,11 +54,11 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => '99.000webhost.io',
+            'host'      => 'localhost',
             'port'      => 3306,
-            'database'  => 'id4640642_crm',
-            'username'  => 'id4640642_admin',
-            'password'  => 'crm123456789',
+            'database'  => 'crm',
+            'username'  => 'root',
+            'password'  => '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

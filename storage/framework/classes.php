@@ -80,4 +80,10 @@
   'RainLab\\User\\Models\\UserGroup' => 'plugins\\rainlab\\user\\models\\UserGroup.php',
   'martin\\gitreposmanager\\Controllers\\repos' => 'plugins\\martin\\gitreposmanager\\controllers\\repos.php',
   'Martin\\GitReposManager\\Models\\Repo' => 'plugins\\martin\\gitreposmanager\\models\\Repo.php',
+  'RainLab\\User\\Components\\Session' => 'plugins\\rainlab\\user\\components\\Session.php',
+  'RainLab\\User\\Components\\Account' => 'plugins\\rainlab\\user\\components\\Account.php',
+  'RainLab\\User\\Components\\ResetPassword' => 'plugins\\rainlab\\user\\components\\ResetPassword.php',
+  'rainlab\\user\\Controllers\\users' => 'plugins\\rainlab\\user\\controllers\\users.php',
+  'dominik\\projects\\Controllers\\cities' => 'plugins\\dominik\\projects\\controllers\\cities.php',
+  'Dominik\\Projects\\Models\\City' => 'plugins\\dominik\\projects\\models\\City.php',
 );

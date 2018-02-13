@@ -75,4 +75,9 @@
   'martin\\gitreposmanager\\Plugin' => 'plugins\\martin\\gitreposmanager\\Plugin.php',
   'backend\\Controllers\\media' => 'modules\\backend\\controllers\\media.php',
   'cms\\Controllers\\themes' => 'modules\\cms\\controllers\\themes.php',
+  'rainlab\\user\\Plugin' => 'plugins\\rainlab\\user\\Plugin.php',
+  'RainLab\\User\\Models\\User' => 'plugins\\rainlab\\user\\models\\User.php',
+  'RainLab\\User\\Models\\UserGroup' => 'plugins\\rainlab\\user\\models\\UserGroup.php',
+  'martin\\gitreposmanager\\Controllers\\repos' => 'plugins\\martin\\gitreposmanager\\controllers\\repos.php',
+  'Martin\\GitReposManager\\Models\\Repo' => 'plugins\\martin\\gitreposmanager\\models\\Repo.php',
 );

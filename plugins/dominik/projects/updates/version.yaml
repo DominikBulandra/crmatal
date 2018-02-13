@@ -6,3 +6,12 @@
 1.0.3:
     - 'Updated table dominik_projects_projects'
     - builder_table_update_dominik_projects_projects.php
+1.0.4:
+    - 'Created table dominik_projects_apartments'
+    - builder_table_create_dominik_projects_apartments.php
+1.0.5:
+    - 'Created table dominik_projects_city'
+    - builder_table_create_dominik_projects_city.php
+1.0.6:
+    - 'Created table dominik_projects_buildings'
+    - builder_table_create_dominik_projects_buildings.php

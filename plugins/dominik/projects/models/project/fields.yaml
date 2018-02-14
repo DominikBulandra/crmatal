@@ -1,29 +1,31 @@
 fields:
+    city:
+        label: Miasto
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
     notation:
         label: Oznaczenie
         oc.commentPosition: ''
-        span: full
+        span: auto
         type: text
     nr_inwestycji:
-        label: 'Number inwestycji'
+        label: 'nr inwestycji'
         oc.commentPosition: ''
         span: auto
-        type: number
-    city_id:
-        label: Dropdown
-        oc.commentPosition: ''
-        options:
-            1: Katowice
-            2: Kraków
-            3: Warszawa
-            4: Gdańsk
-            5: Łódź
-            6: Wrocław
-            7: Poznań
-        span: auto
-        type: dropdown
+        type: text
     balcony_price_m2:
-        label: 'Cena balkonu'
+        label: 'cena balkonów'
         span: auto
         oc.commentPosition: ''
-        type: number
+        type: text
+tabs:
+    fields:
+        notation:
+            label: 'oznaczenie budynku'
+            span: auto
+            oc.commentPosition: ''
+            type: text
+            tab: 'Tab 2'

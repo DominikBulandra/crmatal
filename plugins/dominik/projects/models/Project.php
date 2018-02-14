@@ -25,4 +25,14 @@ class Project extends Model
      * @var string The database table used by the model.
      */
     public $table = 'dominik_projects_projects';
+
+    public $belongsTo = [
+
+    'city' =>[
+            'dominik\projects\Models\city',
+            'table' => 'dominik_projects_city',
+            'order' =>      'name'
+
+    ]
+    ];
 }

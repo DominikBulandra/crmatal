@@ -86,4 +86,5 @@
   'rainlab\\user\\Controllers\\users' => 'plugins\\rainlab\\user\\controllers\\users.php',
   'dominik\\projects\\Controllers\\cities' => 'plugins\\dominik\\projects\\controllers\\cities.php',
   'Dominik\\Projects\\Models\\City' => 'plugins\\dominik\\projects\\models\\City.php',
+  'dominik\\projects\\Models\\city' => 'plugins\\dominik\\projects\\models\\city.php',
 );

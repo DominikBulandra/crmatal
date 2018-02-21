@@ -35,6 +35,14 @@ class Buildings extends Model
             'key' =>      'buildings_id'
            
 
+    ],
+     'cellscount' =>[
+            'dominik\projects\Models\cells',
+            'table' => 'dominik_projects_cells',
+            'key' =>      'buildings_id',
+            'count' => true
+           
+
     ]
     ];
 

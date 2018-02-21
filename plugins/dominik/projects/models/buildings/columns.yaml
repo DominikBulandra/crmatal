@@ -14,11 +14,12 @@ columns:
         type: number
         searchable: true
         sortable: true
-    komórki:
-        label: klatki
+    cellscount:
+        label: 'liczba klatek'
         type: text
-        searchable: true
-        relation: cells
+        relation: cellscount
+        valueFrom: count
+        default: 0
     sublistBtn:
         label: klatki
         type: partial

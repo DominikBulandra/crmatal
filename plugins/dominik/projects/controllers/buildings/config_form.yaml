@@ -1,0 +1,10 @@
+name: Buildings
+form: $/dominik/projects/models/buildings/fields.yaml
+modelClass: Dominik\Projects\Models\Buildings
+defaultRedirect: dominik/projects/buildings
+create:
+    redirect: 'dominik/projects/buildings/update/:id'
+    redirectClose: dominik/projects/buildings
+update:
+    redirect: dominik/projects/buildings
+    redirectClose: dominik/projects/buildings

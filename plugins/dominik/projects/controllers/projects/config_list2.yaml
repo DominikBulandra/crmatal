@@ -1,0 +1,7 @@
+list: $/dominik/projects/models/cells/columns.yaml
+modelClass: Dominik\Projects\Models\Cells
+title: Cells
+noRecordsMessage: 'backend::lang.list.no_records'
+modelclass: dominik/projects/Models/Cells
+recordUrl: dominik/projects/cells/update/:id
+

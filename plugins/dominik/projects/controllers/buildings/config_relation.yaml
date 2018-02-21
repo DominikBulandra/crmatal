@@ -1,0 +1,14 @@
+buildings:
+  label: cells 
+  view: 
+    list: $/dominik/projects/models/cells/columns.yaml
+    toolbarButtons: create|delete
+  manage:
+    form: $/dominik/projects/models/cells/fields.yaml
+cells:
+  label: klatki  
+  view: 
+    list: $/dominik/projects/models/cells/columns.yaml
+    toolbarButtons: create|delete
+  manage:
+    form: $/dominik/projects/models/cells/fields.yaml

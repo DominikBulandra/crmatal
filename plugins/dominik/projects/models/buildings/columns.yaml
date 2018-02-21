@@ -1,0 +1,25 @@
+columns:
+    notation:
+        label: Oznaczenie
+        type: text
+        searchable: true
+        sortable: true
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    project_id:
+        label: 'project id'
+        type: number
+        searchable: true
+        sortable: true
+    komórki:
+        label: klatki
+        type: text
+        searchable: true
+        relation: cells
+    sublistBtn:
+        label: klatki
+        type: partial
+        path: ~/plugins/dominik/projects/models/cells/_sublist.htm

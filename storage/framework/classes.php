@@ -87,4 +87,13 @@
   'dominik\\projects\\Controllers\\cities' => 'plugins\\dominik\\projects\\controllers\\cities.php',
   'Dominik\\Projects\\Models\\City' => 'plugins\\dominik\\projects\\models\\City.php',
   'dominik\\projects\\Models\\city' => 'plugins\\dominik\\projects\\models\\city.php',
+  'dominik\\projects\\Controllers\\buildings' => 'plugins\\dominik\\projects\\controllers\\buildings.php',
+  'Dominik\\Projects\\Models\\Buildings' => 'plugins\\dominik\\projects\\models\\Buildings.php',
+  'dominik\\projects\\Models\\project' => 'plugins\\dominik\\projects\\models\\project.php',
+  'dominik\\projects\\Models\\buildings' => 'plugins\\dominik\\projects\\models\\buildings.php',
+  'dominik\\projects\\Models\\cells' => 'plugins\\dominik\\projects\\models\\cells.php',
+  'dominik\\projects\\Controllers\\cells' => 'plugins\\dominik\\projects\\controllers\\cells.php',
+  'Dominik\\Projects\\Models\\Cells' => 'plugins\\dominik\\projects\\models\\Cells.php',
+  'backend\\Controllers\\usergroups' => 'modules\\backend\\controllers\\usergroups.php',
+  'backend\\Controllers\\userroles' => 'modules\\backend\\controllers\\userroles.php',
 );

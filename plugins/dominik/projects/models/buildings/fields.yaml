@@ -1,0 +1,23 @@
+fields:
+    notation:
+        label: Oznaczenie
+        span: auto
+        oc.commentPosition: ''
+        type: text
+    project:
+        label: 'Projekt id'
+        oc.commentPosition: ''
+        nameFrom: id
+        descriptionFrom: 'id projektu'
+        span: auto
+        type: relation
+    cells:
+        label: klatki
+        oc.commentPosition: ''
+        nameFrom: notation
+        descriptionFrom: description
+        span: full
+        type: partial
+        path: cells_buildings
+
+   

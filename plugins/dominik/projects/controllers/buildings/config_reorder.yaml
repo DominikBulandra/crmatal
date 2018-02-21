@@ -1,0 +1,4 @@
+title: Buildings
+modelClass: Dominik\Projects\Models\Buildings
+toolbar:
+    buttons: reorder_toolbar

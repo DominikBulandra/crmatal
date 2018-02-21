@@ -21,11 +21,11 @@ fields:
         span: auto
         oc.commentPosition: ''
         type: text
-tabs:
-    fields:
-        notation:
-            label: 'oznaczenie budynku'
-            span: auto
-            oc.commentPosition: ''
-            type: text
-            tab: 'Tab 2'
+    buildings:
+        label: budynki
+        oc.commentPosition: ''
+        nameFrom: notation
+        descriptionFrom: description
+        span: full
+        type: partial
+        path: fields_buildings

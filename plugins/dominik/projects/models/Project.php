@@ -35,4 +35,34 @@ class Project extends Model
 
     ]
     ];
+    public $hasMany = [
+
+    'buildings' =>[
+            'dominik\projects\Models\buildings',
+            'table' => 'dominik_projects_buildings',
+            'key' =>      'project_id'
+           
+
+    ],
+    'cellss' =>[
+            'dominik\projects\Models\cells',
+            'table' => 'dominik_projects_cells',
+            'key' =>      'buildings_id'
+      ]     
+    ];
+     public $hasManyThrough = [
+
+
+    'cells' =>[
+             'dominik\projects\Models\cells',
+            'table' => 'dominik_projects_cells',
+            'key' =>      'buildings_id',
+            'through'    => 'dominik\projects\Models\buildings',
+            'table' => 'dominik_projects_buildings',
+            'throughKey' => 'project_id'
+           
+           
+
+    ]
+    ];
 }

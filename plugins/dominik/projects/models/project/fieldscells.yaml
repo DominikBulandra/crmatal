@@ -1,0 +1,11 @@
+fields:
+    notation:
+        label: oznaczenie
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    buildings_id:
+        label: 'id budynku'
+        span: auto
+        oc.commentPosition: ''
+        type: number

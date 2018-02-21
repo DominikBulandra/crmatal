@@ -1,0 +1,7 @@
+fields:
+    notation:
+        label: oznaczenie
+        oc.commentPosition: ''
+        span: auto
+        type: text
+   

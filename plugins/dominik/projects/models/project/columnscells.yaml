@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    notation:
+        label: oznaczenie
+        type: text
+        searchable: true
+        sortable: true
+    buildings_id:
+        label: 'id budynku'
+        type: number
+        searchable: true
+        sortable: true

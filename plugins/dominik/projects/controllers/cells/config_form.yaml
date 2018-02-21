@@ -1,0 +1,10 @@
+name: Cells
+form: $/dominik/projects/models/cells/fields.yaml
+modelClass: Dominik\Projects\Models\Cells
+defaultRedirect: dominik/projects/cells
+create:
+    redirect: 'dominik/projects/cells/update/:id'
+    redirectClose: dominik/projects/cells
+update:
+    redirect: dominik/projects/cells
+    redirectClose: dominik/projects/cells

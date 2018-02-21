@@ -1,0 +1,4 @@
+title: Cells
+modelClass: Dominik\Projects\Models\Cells
+toolbar:
+    buttons: reorder_toolbar

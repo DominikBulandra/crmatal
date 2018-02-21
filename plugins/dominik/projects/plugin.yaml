@@ -14,3 +14,11 @@ navigation:
                 label: Miasta
                 url: dominik/projects/cities
                 icon: icon-university
+            buildings:
+                label: Budynki
+                url: dominik/projects/buildings
+                icon: icon-sitemap
+            cells:
+                label: klatki
+                url: dominik/projects/cells
+                icon: icon-sitemap

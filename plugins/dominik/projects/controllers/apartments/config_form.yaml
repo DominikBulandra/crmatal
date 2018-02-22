@@ -1,0 +1,10 @@
+name: Apartments
+form: $/dominik/projects/models/apartments/fields.yaml
+modelClass: Dominik\Projects\Models\Apartments
+defaultRedirect: dominik/projects/apartments
+create:
+    redirect: 'dominik/projects/apartments/update/:id'
+    redirectClose: dominik/projects/apartments
+update:
+    redirect: dominik/projects/apartments
+    redirectClose: dominik/projects/apartments

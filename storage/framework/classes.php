@@ -96,4 +96,7 @@
   'Dominik\\Projects\\Models\\Cells' => 'plugins\\dominik\\projects\\models\\Cells.php',
   'backend\\Controllers\\usergroups' => 'modules\\backend\\controllers\\usergroups.php',
   'backend\\Controllers\\userroles' => 'modules\\backend\\controllers\\userroles.php',
+  'dominik\\projects\\Models\\apartments' => 'plugins\\dominik\\projects\\models\\apartments.php',
+  'dominik\\projects\\Controllers\\apartments' => 'plugins\\dominik\\projects\\controllers\\apartments.php',
+  'Dominik\\Projects\\Models\\Apartments' => 'plugins\\dominik\\projects\\models\\Apartments.php',
 );

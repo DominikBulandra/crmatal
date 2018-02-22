@@ -1,0 +1,7 @@
+inner_cell:
+  label: Zawartość  
+  view: 
+    list: $/dominik/projects/models/apartments/columns.yaml
+    toolbarButtons: create|delete
+  manage:
+    form: $/dominik/projects/models/apartments/fields.yaml

@@ -48,3 +48,6 @@
 1.0.17:
     - 'Created table dominik_projects_cells'
     - builder_table_create_dominik_projects_cells.php
+1.0.18:
+    - 'Updated table dominik_projects_apartments'
+    - builder_table_update_dominik_projects_apartments.php

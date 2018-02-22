@@ -14,3 +14,7 @@ columns:
         type: number
         searchable: true
         sortable: true
+    sublistBtn:
+        label: lokale
+        type: partial
+        path: ~/plugins/dominik/projects/models/cells/_sublist.htm

@@ -1,6 +1,7 @@
 <?php namespace Dominik\Projects\Models;
 
 use Model;
+use Backend;
 
 /**
  * Model
@@ -20,6 +21,16 @@ class Cells extends Model
      */
     public $rules = [
     ];
+    public $hasMany = [
+
+    'inner_cell' =>[
+            'dominik\projects\Models\apartments',
+            'table' => 'dominik_projects_apartments',
+            'key' =>      'cell_id'
+           
+
+    ]
+    ];
 
     /**
      * @var string The database table used by the model.
@@ -28,4 +39,11 @@ class Cells extends Model
     public $belongsTo = [
     'buildings' => ['dominik\projects\Models\buildings']
 ];
+ public function getSublistBtnAttribute()
+    {
+        //$project = $this->find($this->id);
+        return '<a href="'.Backend::url('dominik/projects/cells/update/'.$this->id).'" class="btn btn-primary btn-sm">
+        <i class="icon icon-indent"></i> Sub list
+        </a>';
+    }
 }

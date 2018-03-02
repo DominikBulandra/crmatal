@@ -1,0 +1,18 @@
+fields:
+    notation:
+        label: Oznaczenie
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    floor:
+        label: Piętro
+        span: auto
+        oc.commentPosition: ''
+        type: text
+    placestypes:
+        label: Typ miejsca
+        oc.commentPosition: ''
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

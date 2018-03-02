@@ -1,0 +1,14 @@
+{% if places|length %}
+	{% for place in places %}
+		<div class="ui segment vertical">
+			<h3 class="ui header">{{place.notation}}</h3>
+			<div class="ui">{{place.id}}</div>
+		</div>
+	{% endfor %}
+{% else %}
+	<div class="ui massage text-center">
+		<p>
+			There are no places.
+		</p>
+	</div>
+{% endif %}

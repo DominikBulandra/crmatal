@@ -1,0 +1,82 @@
+1519999880a:1:{s:18:"index_filtered.htm";a:9:{s:8:"fileName";s:18:"index_filtered.htm";s:7:"content";s:1191:"title = "index"
+url = "/filtered"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use dominik\projects\Models\places;
+	use dominik\projects\Models\cells;
+	function onStart() { $this->prepareVars();}
+	function onFilterPlaces() { $this->prepareVars();}
+
+	function prepareVars() {
+	$options = post('Filter', []);
+	$this['places'] = Places::listFrontEnd($options);
+	$this['cells'] = Cells::all();
+	}
+?>
+==
+<h2 class="ui header" style="margin-top:40px;">Filtered Places</h2>
+<div class="row justify-content-md-center">
+	<div class="col-sm-4">
+	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
+		<div id="PlacesFilter" class="places-filter ui form">
+			<div class="ui segment vertial">
+				<label>Klatka</label>
+				{% for cell in cells %}
+					<div class="field">
+						<div class="checkbox">
+						<label>
+							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
+							{{cell.notation}} {{cell.id}}</label>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	{{ form_close() }}
+	</div>
+
+	<div class="col-sm-8">
+	<div id="partialPlaces">
+		{% partial 'places/places' %}
+	</div>
+	</div>
+</div>";s:5:"mtime";i:1519988858;s:6:"markup";s:777:"<h2 class="ui header" style="margin-top:40px;">Filtered Places</h2>
+<div class="row justify-content-md-center">
+	<div class="col-sm-4">
+	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
+		<div id="PlacesFilter" class="places-filter ui form">
+			<div class="ui segment vertial">
+				<label>Klatka</label>
+				{% for cell in cells %}
+					<div class="field">
+						<div class="checkbox">
+						<label>
+							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
+							{{cell.notation}} {{cell.id}}</label>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	{{ form_close() }}
+	</div>
+
+	<div class="col-sm-8">
+	<div id="partialPlaces">
+		{% partial 'places/places' %}
+	</div>
+	</div>
+</div>";s:4:"code";s:322:"use dominik\projects\Models\places;
+	use dominik\projects\Models\cells;
+	function onStart() { $this->prepareVars();}
+	function onFilterPlaces() { $this->prepareVars();}
+
+	function prepareVars() {
+	$options = post('Filter', []);
+	$this['places'] = Places::listFrontEnd($options);
+	$this['cells'] = Cells::all();
+	}";s:5:"title";s:5:"index";s:3:"url";s:9:"/filtered";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

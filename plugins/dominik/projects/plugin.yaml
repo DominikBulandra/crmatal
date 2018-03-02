@@ -22,7 +22,7 @@ navigation:
                 label: klatki
                 url: dominik/projects/cells
                 icon: icon-sitemap
-            apartments:
-                label: Lokale
-                url: dominik/projects/apartments
+            Places:
+                label: Miejsca
+                url: dominik/projects/places
                 icon: icon-sitemap

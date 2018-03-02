@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    notation:
+        label: Oznaczenie
+        type: text
+        searchable: true
+        sortable: true

@@ -1,0 +1,12 @@
+description = "Lista inwestycji"
+
+[builderList builderList2]
+modelClass = "Dominik\Projects\Models\Project"
+scope = "-"
+displayColumn = "notation"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+{% component 'builderList2' %}

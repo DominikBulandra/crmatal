@@ -1,0 +1,10 @@
+name: Places
+form: $/dominik/projects/models/places/fields.yaml
+modelClass: Dominik\Projects\Models\Places
+defaultRedirect: dominik/projects/places
+create:
+    redirect: 'dominik/projects/places/update/:id'
+    redirectClose: dominik/projects/places
+update:
+    redirect: dominik/projects/places
+    redirectClose: dominik/projects/places

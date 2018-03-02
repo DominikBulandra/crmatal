@@ -1,4 +1,0 @@
-title: Apartments
-modelClass: Dominik\Projects\Models\Apartments
-toolbar:
-    buttons: reorder_toolbar

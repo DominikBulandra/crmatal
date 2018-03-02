@@ -24,8 +24,8 @@ class Cells extends Model
     public $hasMany = [
 
     'inner_cell' =>[
-            'dominik\projects\Models\apartments',
-            'table' => 'dominik_projects_apartments',
+            'dominik\projects\Models\places',
+            'table' => 'dominik_projects_places',
             'key' =>      'cell_id'
            
 

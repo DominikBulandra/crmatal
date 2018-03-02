@@ -15,13 +15,5 @@ tabs:
             type: partial
             path: fields_apartments
             tab: Lokale
-        garages:
-            label: Lokale
-            oc.commentPosition: ''
-            nameFrom: notation
-            descriptionFrom: description
-            span: full
-            type: partial
-            path: fields_apartments
-            tab: Garaze
+     
         

@@ -1,0 +1,4 @@
+title: Places
+modelClass: Dominik\Projects\Models\Places
+toolbar:
+    buttons: reorder_toolbar

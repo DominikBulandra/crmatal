@@ -1,0 +1,9 @@
+1.0.1: First version of projectpermissions
+1.0.2: Created Models table
+1.0.3: changed user project id to project id
+1.0.4: changed user project id to project id
+
+1.0.9: 
+  - hanged user project id to project id
+  - create_user_projects_table.php
+   

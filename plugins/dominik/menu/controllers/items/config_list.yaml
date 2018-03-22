@@ -1,0 +1,12 @@
+list: $/dominik/menu/models/items/columns.yaml
+modelClass: Dominik\Menu\Models\Items
+title: Items
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dominik/menu/items/update/:id'

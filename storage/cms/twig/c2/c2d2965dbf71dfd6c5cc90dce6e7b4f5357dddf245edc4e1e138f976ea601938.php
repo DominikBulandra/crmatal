@@ -29,14 +29,14 @@ class __TwigTemplate_bbe6199453b45c623f101f9bbd1f46128af95d8f7c00ec188ee874e91e1
             <a class=\"navbar-brand\" href=\"";
         // line 11
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("home");
-        echo "\">October Demo</a>
+        echo "\">CRM</a>
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav\">
                
             
                 <li class=\"separator hidden-xs\"></li>
-                <li class=\"";
+                <!--<li class=\"";
         // line 18
         if ((twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["this"] ?? null), "page", array()), "id", array()) == "home")) {
             echo "active";
@@ -59,7 +59,7 @@ class __TwigTemplate_bbe6199453b45c623f101f9bbd1f46128af95d8f7c00ec188ee874e91e1
         }
         echo "\"><a href=\"";
         echo $this->env->getExtension('Cms\Twig\Extension')->pageFilter("plugins");
-        echo "\">Plugin components</a></li>
+        echo "\">Plugin components</a></li>-->
                   <li class=\"separator hidden-xs\">";
         // line 21
         $context['__cms_component_params'] = [];
@@ -67,7 +67,13 @@ class __TwigTemplate_bbe6199453b45c623f101f9bbd1f46128af95d8f7c00ec188ee874e91e1
         unset($context['__cms_component_params']);
         echo "</li>
         </div>
-    </div>
+        ";
+        // line 23
+        $context['__cms_component_params'] = [];
+        echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("menu"        , $context['__cms_component_params']        );
+        unset($context['__cms_component_params']);
+        // line 24
+        echo "    </div>
 </nav>";
     }
 
@@ -83,7 +89,7 @@ class __TwigTemplate_bbe6199453b45c623f101f9bbd1f46128af95d8f7c00ec188ee874e91e1
 
     public function getDebugInfo()
     {
-        return array (  65 => 21,  57 => 20,  49 => 19,  41 => 18,  31 => 11,  19 => 1,);
+        return array (  76 => 24,  72 => 23,  65 => 21,  57 => 20,  49 => 19,  41 => 18,  31 => 11,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -98,18 +104,19 @@ class __TwigTemplate_bbe6199453b45c623f101f9bbd1f46128af95d8f7c00ec188ee874e91e1
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button>
-            <a class=\"navbar-brand\" href=\"{{ 'home'|page }}\">October Demo</a>
+            <a class=\"navbar-brand\" href=\"{{ 'home'|page }}\">CRM</a>
         </div>
         <div class=\"collapse navbar-collapse navbar-main-collapse\">
             <ul class=\"nav navbar-nav\">
                
             
                 <li class=\"separator hidden-xs\"></li>
-                <li class=\"{% if this.page.id == 'home' %}active{% endif %}\"><a href=\"{{ 'home'|page }}\">Basic concepts</a></li>
+                <!--<li class=\"{% if this.page.id == 'home' %}active{% endif %}\"><a href=\"{{ 'home'|page }}\">Basic concepts</a></li>
                 <li class=\"{% if this.page.id == 'ajax' %}active{% endif %}\"><a href=\"{{ 'ajax'|page }}\">AJAX framework</a></li>
-                <li class=\"{% if this.page.id == 'plugins' %}active{% endif %}\"><a href=\"{{ 'plugins'|page }}\">Plugin components</a></li>
+                <li class=\"{% if this.page.id == 'plugins' %}active{% endif %}\"><a href=\"{{ 'plugins'|page }}\">Plugin components</a></li>-->
                   <li class=\"separator hidden-xs\">{% component 'Projectslist' %}</li>
         </div>
+        {% component 'menu' %}
     </div>
 </nav>", "C:\\xampp2\\htdocs\\crm/themes/demo/partials/site/header.htm", "");
     }

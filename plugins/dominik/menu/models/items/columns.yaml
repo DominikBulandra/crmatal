@@ -1,0 +1,10 @@
+columns:
+    name:
+        label: Nazwa
+        type: text
+    slogan:
+        label: slogan
+        type: text
+    usergroup_id:
+        label: 'Grupa użytkownika'
+        type: number

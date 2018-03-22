@@ -18,28 +18,44 @@ class __TwigTemplate_2d7202d8dd3cf601ec38801b369ee424d7d00eefd50159b9f4646bec398
         // line 1
         if (twig_length_filter($this->env, ($context["places"] ?? null))) {
             // line 2
-            echo "\t";
+            echo "<table class=\"table table-bordered\">
+\t\t\t<thread class=\"thead-dark\">
+\t\t\t<tr>
+\t\t\t\t<th scope=\"col\">Id</th>
+     \t\t\t <th scope=\"col\">Oznaczenie</th>
+     \t\t</tr>
+     \t</thread>
+     \t <tbody>
+\t";
+            // line 10
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["places"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["place"]) {
-                // line 3
-                echo "\t\t<div class=\"ui segment vertical\">
-\t\t\t<h3 class=\"ui header\">";
-                // line 4
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["place"], "notation", array()), "html", null, true);
-                echo "</h3>
-\t\t\t<div class=\"ui\">";
-                // line 5
+                // line 11
+                echo "\t\t
+    
+     <tr>
+
+\t\t<td>";
+                // line 15
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["place"], "id", array()), "html", null, true);
-                echo "</div>
-\t\t</div>
+                echo "</td>
+\t\t\t<td><BUTTON class=\"btn btn-info\">";
+                // line 16
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), $context["place"], "notation", array()), "html", null, true);
+                echo "</BUTTON></td>
+\t\t</tr>
 \t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['place'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 19
+            echo "</tbody>
+</table>
+";
         } else {
-            // line 9
+            // line 22
             echo "\t<div class=\"ui massage text-center\">
 \t\t<p>
 \t\t\tThere are no places.
@@ -61,18 +77,31 @@ class __TwigTemplate_2d7202d8dd3cf601ec38801b369ee424d7d00eefd50159b9f4646bec398
 
     public function getDebugInfo()
     {
-        return array (  43 => 9,  33 => 5,  29 => 4,  26 => 3,  21 => 2,  19 => 1,);
+        return array (  59 => 22,  54 => 19,  45 => 16,  41 => 15,  35 => 11,  31 => 10,  21 => 2,  19 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% if places|length %}
+<table class=\"table table-bordered\">
+\t\t\t<thread class=\"thead-dark\">
+\t\t\t<tr>
+\t\t\t\t<th scope=\"col\">Id</th>
+     \t\t\t <th scope=\"col\">Oznaczenie</th>
+     \t\t</tr>
+     \t</thread>
+     \t <tbody>
 \t{% for place in places %}
-\t\t<div class=\"ui segment vertical\">
-\t\t\t<h3 class=\"ui header\">{{place.notation}}</h3>
-\t\t\t<div class=\"ui\">{{place.id}}</div>
-\t\t</div>
+\t\t
+    
+     <tr>
+
+\t\t<td>{{place.id}}</td>
+\t\t\t<td><BUTTON class=\"btn btn-info\">{{place.notation}}</BUTTON></td>
+\t\t</tr>
 \t{% endfor %}
+</tbody>
+</table>
 {% else %}
 \t<div class=\"ui massage text-center\">
 \t\t<p>

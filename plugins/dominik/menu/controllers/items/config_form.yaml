@@ -1,0 +1,10 @@
+name: Items
+form: $/dominik/menu/models/items/fields.yaml
+modelClass: Dominik\Menu\Models\Items
+defaultRedirect: dominik/menu/items
+create:
+    redirect: 'dominik/menu/items/update/:id'
+    redirectClose: dominik/menu/items
+update:
+    redirect: dominik/menu/items
+    redirectClose: dominik/menu/items

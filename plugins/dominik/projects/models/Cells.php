@@ -37,7 +37,13 @@ class Cells extends Model
      */
     public $table = 'dominik_projects_cells';
     public $belongsTo = [
-    'buildings' => ['dominik\projects\Models\buildings']
+    'buildings' => ['dominik\projects\Models\buildings',
+            'table' => 'dominik_projects_buildings'],
+    'buildings2' => [
+     'dominik\projects\Models\buildings',
+            'table' => 'dominik_projects_buildings'
+
+    ]
 ];
  public function getSublistBtnAttribute()
     {
@@ -46,4 +52,32 @@ class Cells extends Model
         <i class="icon icon-indent"></i> Sub list
         </a>';
     }
+ public function scopeListFrontEnd($query, $options = []){
+        extract(array_merge([
+            'page' => 1,
+            'perPage' => 10,
+            'sort' => 'id desc',
+            'buildings' => null
+
+        ], $options));
+
+        if($buildings !== null){
+
+            if(!is_array($buildings)){
+
+                $buildings = [$buildings];
+            }
+
+
+            foreach ($buildings as $building){
+                $query->whereHas('buildings', function($q) use ($building){
+                    $q->where('id','=', $building);
+                });
+            }
+            
+        }
+        return $query->paginate($perPage, $page);
+
+    }
+
 }

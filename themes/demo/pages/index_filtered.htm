@@ -1,46 +1,116 @@
 title = "index"
-url = "/filtered"
+url = "/"
 layout = "default"
 is_hidden = 0
+
+[Projectslist]
+
+[session]
+security = "user"
+redirect = "login"
+
+[menu]
 ==
 <?php
 use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;
-	function onStart() { $this->prepareVars();}
+	use dominik\projects\Models\buildings;
+
+	function onStart() { $this->prepareVars();
+
+}
 	function onFilterPlaces() { $this->prepareVars();}
+	function onFilterCells() { $this->prepareVars();}
+	
 
 	function prepareVars() {
+	$value = Session::get('name');
 	$options = post('Filter', []);
+	$options2 = post('Filter2', []);
+	$this['dane'] = Session::get('message');
+	$this['dane2'] = Session::get('p2test');
 	$this['places'] = Places::listFrontEnd($options);
-	$this['cells'] = Cells::all();
+	$this['places2']=Session::get('places');
+	$this['value'] = Session::get('ev3');
+		//$this['siteid']=Config::get('siteid');
+	$this['cells'] = Cells::listFrontEnd($options2);
+	$this['buildings'] = Db::table('dominik_projects_buildings')->where('project_id', '=', Session::get('message'))->get();
 	}
 ?>
 ==
-<h2 class="ui header" style="margin-top:40px;">Filtered Places</h2>
+{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Places {{value}} </h2>{% component 'Projectslist' %}
+{{siteid}}{{dane}}Tu{{dane2}}
+<table id="table" class="display">
+    <thead>
+        <tr>
+            <th>Id </th>
+            <th>Oznaczenie</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for id, notation in ev3 %}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{notation}}</td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+<button id="testbutton">test</button>
 <div class="row justify-content-md-center">
 	<div class="col-sm-4">
-	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
-		<div id="PlacesFilter" class="places-filter ui form">
-			<div class="ui segment vertial">
-				<label>Klatka</label>
-				{% for cell in cells %}
+	<div id="CellsFilter" class="ui segment vertial">
+			{{ form_ajax('onFilterCells',{ update: { 'places/cells': '#partialCells'}})}}
+				<label>Budynek</label>
+				{% for building in buildings %}
 					<div class="field">
 						<div class="checkbox">
 						<label>
-							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
-							{{cell.notation}} {{cell.id}}</label>
+							<input type="checkbox" name="Filter2[buildings][]" value="{{ building.id }}" />
+							{{building.notation}} {{building.id}}</label>
 						</div>
 					</div>
 				{% endfor %}
+			{{ form_close() }}
 			</div>
+	
+	
+
+		<div id="PlacesFilter" class="places-filter ui form">
+			tu {{dane}}
+
+
+			
+			<div class="ui segment vertial">
+
+			<div id="partialCells">
+			
+		{% partial 'places/cells' %}
+		
+			</div>
+
+			
+			</div>
+
 		</div>
 
-	{{ form_close() }}
+	
 	</div>
 
 	<div class="col-sm-8">
 	<div id="partialPlaces">
 		{% partial 'places/places' %}
+		<BUTTON id="NextPage" class="btn btn-default">Następna strona</BUTTON>
 	</div>
 	</div>
+
 </div>
+
+<script type="text/javascript">
+	
+$(document).ready( function () {
+    var table= $('#table').DataTable();
+} );
+	
+</script>

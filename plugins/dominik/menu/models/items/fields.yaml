@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: Nazwa
+        span: auto
+        type: text
+    slogan:
+        label: Slogan
+        span: auto
+        type: text
+    usergroup:
+        label: Relation
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

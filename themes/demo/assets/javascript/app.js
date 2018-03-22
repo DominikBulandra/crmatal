@@ -30,6 +30,7 @@ jQuery(document).ready(function($){
         }
     })
 
+
     function autoHideHeader() {
         var currentTop = $(window).scrollTop()
 
@@ -49,13 +50,37 @@ jQuery(document).ready(function($){
 (function($){
 
     $('#PlacesFilter').on('change','input, select',function(){
-        var $form = $(this).closest('form');
+        var $form = $("#partialCells").find('form');
         
         $form.request();
 
 
     });
+     $('#CellsFilter').on('change','input, select',function(){
+        var $form2 = $("#CellsFilter").find('form');
+        
+        $form2.request();
+
+
+    });
+      $('#testbutton').on('click',function(){
+       alert("działa");
+
+
+    });
+     
+     
+
+
+
 
 
 })(jQuery);
+$(document).ready( function () {
+    var table= $('#table').DataTable();
+} );
 
+ function SendProjectId()
+ {
+        alert("działa");
+    }

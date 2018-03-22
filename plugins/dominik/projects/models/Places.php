@@ -38,7 +38,16 @@ class Places extends Model
             'table' => 'dominik_projects_cells',
             'order' =>      'notation'
 
+    ],
+    'buildings' =>[
+            'dominik\projects\Models\buildings',
+            'table' => 'dominik_projects_buildings',
+            'order' =>      'notation'
+
     ]
+
+
+
 
     ];
     public function scopeListFrontEnd($query, $options = []){

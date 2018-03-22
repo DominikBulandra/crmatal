@@ -1,10 +1,23 @@
 {% if places|length %}
+<table class="table table-bordered">
+			<thread class="thead-dark">
+			<tr>
+				<th scope="col">Id</th>
+     			 <th scope="col">Oznaczenie</th>
+     		</tr>
+     	</thread>
+     	 <tbody>
 	{% for place in places %}
-		<div class="ui segment vertical">
-			<h3 class="ui header">{{place.notation}}</h3>
-			<div class="ui">{{place.id}}</div>
-		</div>
+		
+    
+     <tr>
+
+		<td>{{place.id}}</td>
+			<td><BUTTON class="btn btn-info">{{place.notation}}</BUTTON></td>
+		</tr>
 	{% endfor %}
+</tbody>
+</table>
 {% else %}
 	<div class="ui massage text-center">
 		<p>

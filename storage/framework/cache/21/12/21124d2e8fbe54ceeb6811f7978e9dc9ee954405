@@ -1,23 +1,49 @@
-1519999880a:1:{s:17:"places/places.htm";a:5:{s:8:"fileName";s:17:"places/places.htm";s:7:"content";s:314:"{% if places|length %}
+1521726478a:1:{s:17:"places/places.htm";a:5:{s:8:"fileName";s:17:"places/places.htm";s:7:"content";s:522:"{% if places|length %}
+<table class="table table-bordered">
+			<thread class="thead-dark">
+			<tr>
+				<th scope="col">Id</th>
+     			 <th scope="col">Oznaczenie</th>
+     		</tr>
+     	</thread>
+     	 <tbody>
 	{% for place in places %}
-		<div class="ui segment vertical">
-			<h3 class="ui header">{{place.notation}}</h3>
-			<div class="ui">{{place.id}}</div>
-		</div>
+		
+    
+     <tr>
+
+		<td>{{place.id}}</td>
+			<td><BUTTON class="btn btn-info">{{place.notation}}</BUTTON></td>
+		</tr>
 	{% endfor %}
+</tbody>
+</table>
 {% else %}
 	<div class="ui massage text-center">
 		<p>
 			There are no places.
 		</p>
 	</div>
-{% endif %}";s:5:"mtime";i:1519811617;s:6:"markup";s:314:"{% if places|length %}
+{% endif %}";s:5:"mtime";i:1520341875;s:6:"markup";s:522:"{% if places|length %}
+<table class="table table-bordered">
+			<thread class="thead-dark">
+			<tr>
+				<th scope="col">Id</th>
+     			 <th scope="col">Oznaczenie</th>
+     		</tr>
+     	</thread>
+     	 <tbody>
 	{% for place in places %}
-		<div class="ui segment vertical">
-			<h3 class="ui header">{{place.notation}}</h3>
-			<div class="ui">{{place.id}}</div>
-		</div>
+		
+    
+     <tr>
+
+		<td>{{place.id}}</td>
+			<td><BUTTON class="btn btn-info">{{place.notation}}</BUTTON></td>
+		</tr>
 	{% endfor %}
+</tbody>
+</table>
 {% else %}
 	<div class="ui massage text-center">
 		<p>

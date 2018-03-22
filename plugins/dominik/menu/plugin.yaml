@@ -1,0 +1,11 @@
+plugin:
+    name: 'dominik.menu::lang.plugin.name'
+    description: 'dominik.menu::lang.plugin.description'
+    author: Dominik
+    icon: oc-icon-align-justify
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Menu
+        url: dominik/menu/items
+        icon: icon-align-justify

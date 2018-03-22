@@ -20,6 +20,7 @@ tabs:
             tab: rainlab.user::lang.user.account
             span: full
 
+
         send_invite:
             type: checkbox
             label: rainlab.user::lang.user.send_invite
@@ -69,7 +70,20 @@ tabs:
             tab: rainlab.user::lang.user.account
             type: relation
             emptyOption: rainlab.user::lang.user.empty_groups
+        projects:
+            label: rainlab.user::lang.user.projects
+            tab: rainlab.user::lang.user.permissions
+            type: relation
+            emptyOption: rainlab.user::lang.user.empty_groups
+        
+   
+Ustawienia:
+    fields:
 
+        Inwestycje:
+            label: rainlab.user::lang.user.email
+            tab: rainlab.user::lang.user.account
+            span: full
 secondaryTabs:
     fields:
 
@@ -79,3 +93,4 @@ secondaryTabs:
             mode: image
             imageHeight: 260
             imageWidth: 260
+   

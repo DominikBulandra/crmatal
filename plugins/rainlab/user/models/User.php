@@ -32,11 +32,15 @@ class User extends UserBase
      * @var array Relations
      */
     public $belongsToMany = [
-        'groups' => [UserGroup::class, 'table' => 'users_groups']
+        'groups' => [UserGroup::class, 'table' => 'users_groups'],
+        'projects' => [UserProject::class, 'table' => 'users_projects']
     ];
 
     public $attachOne = [
         'avatar' => \System\Models\File::class
+    ];
+     public $HasMany = [
+        
     ];
 
     /**

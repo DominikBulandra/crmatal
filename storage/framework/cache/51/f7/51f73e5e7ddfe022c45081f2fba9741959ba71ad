@@ -1,82 +1,214 @@
-1519999880a:1:{s:18:"index_filtered.htm";a:9:{s:8:"fileName";s:18:"index_filtered.htm";s:7:"content";s:1191:"title = "index"
-url = "/filtered"
+1521727001a:1:{s:18:"index_filtered.htm";a:12:{s:8:"fileName";s:18:"index_filtered.htm";s:7:"content";s:2689:"title = "index"
+url = "/"
 layout = "default"
 is_hidden = 0
+
+[Projectslist]
+
+[session]
+security = "user"
+redirect = "login"
+
+[menu]
 ==
 <?php
 use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;
-	function onStart() { $this->prepareVars();}
+	use dominik\projects\Models\buildings;
+
+	function onStart() { $this->prepareVars();
+
+}
 	function onFilterPlaces() { $this->prepareVars();}
+	function onFilterCells() { $this->prepareVars();}
+	
 
 	function prepareVars() {
+	$value = Session::get('name');
 	$options = post('Filter', []);
+	$options2 = post('Filter2', []);
+	$this['dane'] = Session::get('message');
+	$this['dane2'] = Session::get('p2test');
 	$this['places'] = Places::listFrontEnd($options);
-	$this['cells'] = Cells::all();
+	$this['places2']=Session::get('places');
+	$this['value'] = Session::get('ev3');
+		//$this['siteid']=Config::get('siteid');
+	$this['cells'] = Cells::listFrontEnd($options2);
+	$this['buildings'] = Db::table('dominik_projects_buildings')->where('project_id', '=', Session::get('message'))->get();
 	}
 ?>
 ==
-<h2 class="ui header" style="margin-top:40px;">Filtered Places</h2>
+{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Places {{value}} </h2>{% component 'Projectslist' %}
+{{siteid}}{{dane}}Tu{{dane2}}
+<table id="table" class="display">
+    <thead>
+        <tr>
+            <th>Id </th>
+            <th>Oznaczenie</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for id, notation in ev3 %}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{notation}}</td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+<button id="testbutton">test</button>
 <div class="row justify-content-md-center">
 	<div class="col-sm-4">
-	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
-		<div id="PlacesFilter" class="places-filter ui form">
-			<div class="ui segment vertial">
-				<label>Klatka</label>
-				{% for cell in cells %}
+	<div id="CellsFilter" class="ui segment vertial">
+			{{ form_ajax('onFilterCells',{ update: { 'places/cells': '#partialCells'}})}}
+				<label>Budynek</label>
+				{% for building in buildings %}
 					<div class="field">
 						<div class="checkbox">
 						<label>
-							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
-							{{cell.notation}} {{cell.id}}</label>
+							<input type="checkbox" name="Filter2[buildings][]" value="{{ building.id }}" />
+							{{building.notation}} {{building.id}}</label>
 						</div>
 					</div>
 				{% endfor %}
+			{{ form_close() }}
 			</div>
+	
+	
+
+		<div id="PlacesFilter" class="places-filter ui form">
+			tu {{dane}}
+
+
+			
+			<div class="ui segment vertial">
+
+			<div id="partialCells">
+			
+		{% partial 'places/cells' %}
+		
+			</div>
+
+			
+			</div>
+
 		</div>
 
-	{{ form_close() }}
+	
 	</div>
 
 	<div class="col-sm-8">
 	<div id="partialPlaces">
 		{% partial 'places/places' %}
+		<BUTTON id="NextPage" class="btn btn-default">Następna strona</BUTTON>
 	</div>
 	</div>
-</div>";s:5:"mtime";i:1519988858;s:6:"markup";s:777:"<h2 class="ui header" style="margin-top:40px;">Filtered Places</h2>
+
+</div>
+
+<script type="text/javascript">
+	
+$(document).ready( function () {
+    var table= $('#table').DataTable();
+} );
+	
+</script>";s:5:"mtime";i:1521721694;s:6:"markup";s:1680:"{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Places {{value}} </h2>{% component 'Projectslist' %}
+{{siteid}}{{dane}}Tu{{dane2}}
+<table id="table" class="display">
+    <thead>
+        <tr>
+            <th>Id </th>
+            <th>Oznaczenie</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for id, notation in ev3 %}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{notation}}</td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+<button id="testbutton">test</button>
 <div class="row justify-content-md-center">
 	<div class="col-sm-4">
-	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
-		<div id="PlacesFilter" class="places-filter ui form">
-			<div class="ui segment vertial">
-				<label>Klatka</label>
-				{% for cell in cells %}
+	<div id="CellsFilter" class="ui segment vertial">
+			{{ form_ajax('onFilterCells',{ update: { 'places/cells': '#partialCells'}})}}
+				<label>Budynek</label>
+				{% for building in buildings %}
 					<div class="field">
 						<div class="checkbox">
 						<label>
-							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
-							{{cell.notation}} {{cell.id}}</label>
+							<input type="checkbox" name="Filter2[buildings][]" value="{{ building.id }}" />
+							{{building.notation}} {{building.id}}</label>
 						</div>
 					</div>
 				{% endfor %}
+			{{ form_close() }}
 			</div>
+	
+	
+
+		<div id="PlacesFilter" class="places-filter ui form">
+			tu {{dane}}
+
+
+			
+			<div class="ui segment vertial">
+
+			<div id="partialCells">
+			
+		{% partial 'places/cells' %}
+		
+			</div>
+
+			
+			</div>
+
 		</div>
 
-	{{ form_close() }}
+	
 	</div>
 
 	<div class="col-sm-8">
 	<div id="partialPlaces">
 		{% partial 'places/places' %}
+		<BUTTON id="NextPage" class="btn btn-default">Następna strona</BUTTON>
 	</div>
 	</div>
-</div>";s:4:"code";s:322:"use dominik\projects\Models\places;
+
+</div>
+
+<script type="text/javascript">
+	
+$(document).ready( function () {
+    var table= $('#table').DataTable();
+} );
+	
+</script>";s:4:"code";s:845:"use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;
-	function onStart() { $this->prepareVars();}
+	use dominik\projects\Models\buildings;
+
+	function onStart() { $this->prepareVars();
+
+}
 	function onFilterPlaces() { $this->prepareVars();}
+	function onFilterCells() { $this->prepareVars();}
+	
 
 	function prepareVars() {
+	$value = Session::get('name');
 	$options = post('Filter', []);
+	$options2 = post('Filter2', []);
+	$this['dane'] = Session::get('message');
+	$this['dane2'] = Session::get('p2test');
 	$this['places'] = Places::listFrontEnd($options);
-	$this['cells'] = Cells::all();
-	}";s:5:"title";s:5:"index";s:3:"url";s:9:"/filtered";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}
+	$this['places2']=Session::get('places');
+	$this['value'] = Session::get('ev3');
+		//$this['siteid']=Config::get('siteid');
+	$this['cells'] = Cells::listFrontEnd($options2);
+	$this['buildings'] = Db::table('dominik_projects_buildings')->where('project_id', '=', Session::get('message'))->get();
+	}";s:5:"title";s:5:"index";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:12:"Projectslist";a:0:{}s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:5:"login";}s:4:"menu";a:0:{}}}

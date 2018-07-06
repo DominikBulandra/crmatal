@@ -15,6 +15,7 @@ redirect = "login"
 use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;
 	use dominik\projects\Models\buildings;
+	use dominik\menu\components\menu;
 	function onStart() { $this->prepareVars();
 }
 	function onFilterPlaces() { $this->prepareVars();}
@@ -29,6 +30,7 @@ use dominik\projects\Models\places;
 	$this['places'] = Places::listFrontEnd($options);
 	$this['places2']=Session::get('places');
 	$this['value'] = Session::get('ev3');
+	$this['ev4'] = menu::onApartments();
 		
 	$this['cells'] = Cells::listFrontEnd($options2);
 	$this['buildings'] = Db::table('dominik_projects_buildings')->where('project_id', '=', Session::get('message'))->get();
@@ -37,30 +39,243 @@ use dominik\projects\Models\places;
 ==
 {% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Apartments </h2>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .dialog-form {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+</style>
+
 <table id="table" class="display">
     <thead>
         <tr>
             <th>Id </th>
             <th>Oznaczenie</th>
+            <th>cell id</th>
+            <th>Edycja</th>
         </tr>
     </thead>
     <tbody>
-    	{% for id, notation in ev3 %}
-        <tr>
-            <td>{{id}}</td>
-            <td>{{notation}}</td>
+    	
+    	{% for id in ev4 %}
+        <tr id="tableon">
+            <td>{{id.id}}</td>
+            <td>{{id.notation}}</td>
+            <td>{{id.cell_id}}</td>
+            <td><button id="modalb" onclick="loadDoc()">test</button><button type="button" class="btn btn-primary" data-toggle="modal" data-target='#exampleModal{{ id.id }}'>Szczegóły</button>
+            <button id="addc" onclick="addCookie('{{id.id}}','{{id.notation}}')">dodaj do koszyka</button>
+<div class="modal fade" id="exampleModal{{ id.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          {{id.id}}
+          <ul class="nav nav-tabs"id="tabContent">
+              <li><a href="#details{{ id.id }}" data-toggle="tab">Karta lokalu</a></li>
+              <li><a href="#access-security{{ id.id }}" data-toggle="tab">Dokumenty</a></li>
+              <li><a href="#networking{{ id.id }}" data-toggle="tab">Finanse</a></li>
+                <li><a href="#plan{{ id.id }}" data-toggle="tab">Plan</a></li>
+              <li><a href="#wykonczenie{{ id.id }}" data-toggle="tab">Wykończenie</a></li>
+            </ul>
+        
+            
+              
+         
+            <div class="control-group">
+              <label class="control-label">Instance Name</label>
+            
+              </div>
+            
+              
+              <div class="tab-pane fade" id="details{{ id.id }}">
+                <DIV id='displaydiv' style="display: none;"><P>display none</P></DIV>
+                <form onsubmit='onEdit()'>
+                  <table>
+                      
+                      <tr>
+                        <td>Oznaczenie</td>
+                        <td><input id='EditInput' name='id' value='{{id.notation}}' readonly='readonly'></td>
+                      </tr>
+                      <tr>
+                        <td>Piętro</td>
+                        <td><input  id='EditInput' name='floor' value='{{id.floor}}' readonly='readonly'></td>
+                        
+                      </tr>
+                      <tr>
+                        <td>Cena</td>
+                        <td><input  id='EditInput' name='price' value='{{id.price}}' readonly='readonly'></td>
+                       
+                      </tr>
+                      <tr>
+                        <td>Powierzchnia</td>
+                        <td>Helen Bennett</td>
+                    
+                      </tr>
+                      <tr>
+                        <td>Ilość pokoi</td>
+                        <td>Yoshi Tannamuri</td>
+                      </tr>
+                      <tr>
+                        <td>Vat</td>
+                        <td>Giovanni Rovelli</td>
+                      </tr>
+                      <button type="submit">Zapisz</button>
+                    </table>
+                    </form>
+                    <button id="editapart" onclick="loadEdit()">Zmień</button>
+                    
+
+
+              </div>
+              <div class="tab-pane fade" id="access-security{{ id.id }}">
+               <P>Lista dokumentów:</P>
+            </div> 
+            
+              <div class="tab-pane fade" id="plan{{ id.id }}">
+                  {{id.notation}}
+              {% partial 'places/places' %} plan
+              </div> 
+           
+              <div class="tab-pane fade" id="wykonczenie{{ id.id }}">
+              wykonczenia
+              
+              </div> 
+            
+      
+           
+              <div class="tab-pane fade" id="networking{{ id.id }}">
+              networking
+             </div> 
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                                    </td>
         </tr>
         {% endfor %}
         
     </tbody>
 </table>
-<button id="testbutton">test</button>
 
+<div id="dialog-form" class="dialog-form" title="Create new user">
+  <p class="validateTips">All form fields are required.</p>
+ 
+  <form>
+    <fieldset>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+ 
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </fieldset>
+  </form>
+</div>
+<DIV id='displaydiv' style="display: none;"><P>display none</P></DIV>
+<button id="testbutton" onclick="loadDoc()">test</button>
+<div id="dialog" title="Basic dialog">
+    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  </div>
 
+  <button id="editapart">Zmień</button>
 <script type="text/javascript">
-	
-$(document).ready( function () {
-    var table= $('#table').DataTable();
-} );
-	
+
+ var dialog, form;
+ function addUser (){
+  alert("adduser");
+ };
+ dialog = $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 400,
+      width: 350,
+      modal: true,
+      buttons: {
+        "Create an account": addUser,
+        Cancel: function() {
+          dialog.dialog( "close" );
+        }
+      },
+      close: function() {
+        form[ 0 ].reset();
+        allFields.removeClass( "ui-state-error" );
+      }
+    });
+    $( "#testbutton" ).button().on( "click", function() {
+  dialog.dialog( "open" );
+    });
+    function loadDoc(){
+      dialog.dialog( "open" );
+
+    };
+    function loadEdit(){
+      var $yourUl = $("#displaydiv"); 
+$yourUl.css("display", $yourUl.css("display") === 'none' ? '' : 'none');
+$("#yourUlId").toggle();
+     
+    };
+
+function delCookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+ 
+  alert("usunięto");
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+  for (var i = 0, len = res.length; i < len; i++) {
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<button onClick="delCookie(\'' + res[i] + '\')" />Usuń</button>';
+     
+  html += ("<P>-------</P>");
+    }
+  }
+  $('#basketdiv').html(html);
+}
+function addCookie(c,notation){
+  
+  document.cookie = "basket"+c+"="+notation;
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+  for (var i = 0, len = res.length; i < len; i++) {
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+  
+$('#basketdiv').html(html);
+  
+alert("dodano do koszyka "+c);
+}
 </script>

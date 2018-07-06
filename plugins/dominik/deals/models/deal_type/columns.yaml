@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'nazwa typu'
+        type: text
+        searchable: true
+        sortable: true
+    hash:
+        label: skrót
+        type: text
+        searchable: true
+        sortable: true

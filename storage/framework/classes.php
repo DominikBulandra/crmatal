@@ -121,4 +121,10 @@
   'Dominik\\Menu\\Models\\Items' => 'plugins\\dominik\\menu\\models\\Items.php',
   'rainlab\\user\\Models\\usergroup' => 'plugins\\rainlab\\user\\models\\usergroup.php',
   'Dominik\\menu\\Components\\menu' => 'plugins\\dominik\\menu\\components\\menu.php',
+  'dominik\\deals\\Plugin' => 'plugins\\dominik\\deals\\Plugin.php',
+  'dominik\\deals\\Controllers\\deals' => 'plugins\\dominik\\deals\\controllers\\deals.php',
+  'Dominik\\Deals\\Models\\Deals' => 'plugins\\dominik\\deals\\models\\Deals.php',
+  'Dominik\\deals\\Components\\Basketlist' => 'plugins\\dominik\\deals\\components\\Basketlist.php',
+  'dominik\\deals\\Controllers\\deals_type' => 'plugins\\dominik\\deals\\controllers\\deals_type.php',
+  'Dominik\\Deals\\Models\\Deal_type' => 'plugins\\dominik\\deals\\models\\Deal_type.php',
 );

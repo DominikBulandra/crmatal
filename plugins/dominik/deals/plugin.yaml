@@ -1,0 +1,16 @@
+plugin:
+    name: 'dominik.deals::lang.plugin.name'
+    description: 'dominik.deals::lang.plugin.description'
+    author: Dominik
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Umowy
+        url: dominik/deals/deals
+        icon: icon-archive
+        sideMenu:
+            side-menu-item:
+                label: 'typy umów'
+                url: dominik/deals/deals_type
+                icon: icon-align-justify

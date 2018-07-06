@@ -1,0 +1,10 @@
+name: Deals
+form: $/dominik/deals/models/deals/fields.yaml
+modelClass: Dominik\Deals\Models\Deals
+defaultRedirect: dominik/deals/deals
+create:
+    redirect: 'dominik/deals/deals/update/:id'
+    redirectClose: dominik/deals/deals
+update:
+    redirect: dominik/deals/deals
+    redirectClose: dominik/deals/deals

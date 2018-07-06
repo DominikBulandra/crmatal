@@ -1,5 +1,14 @@
 description = "Default layout"
 ==
+<?php
+    
+    function prepareVars() {
+
+    $this['projname'] = Cookie::get('projname');
+}
+ 
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,8 +21,15 @@ description = "Default layout"
         <meta name="generator" content="OctoberCMS">
         <link rel="icon" type="image/jpg" href="{{ 'assets/images/october2.jpg'|theme }}">
         <link href="{{ 'assets/css/vendor.css'|theme }}" rel="stylesheet">
+       
         <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+         <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         {% styles %}
     </head>
     <body>
@@ -36,6 +52,7 @@ description = "Default layout"
 
         <!-- Scripts -->
         <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
+        
         <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
         <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>

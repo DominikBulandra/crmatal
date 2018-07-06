@@ -15,6 +15,7 @@ redirect = "login"
 use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;
 	use dominik\projects\Models\buildings;
+	use dominik\menu\components\menu;
 	function onStart() { $this->prepareVars();
 }
 	function onFilterPlaces() { $this->prepareVars();}
@@ -29,6 +30,7 @@ use dominik\projects\Models\places;
 	$this['places'] = Places::listFrontEnd($options);
 	$this['places2']=Session::get('places');
 	$this['value'] = Session::get('ev3');
+	$this['ev4'] = menu::onCells();
 		
 	$this['cells'] = Cells::listFrontEnd($options2);
 	$this['buildings'] = Db::table('dominik_projects_buildings')->where('project_id', '=', Session::get('message'))->get();
@@ -42,13 +44,16 @@ use dominik\projects\Models\places;
         <tr>
             <th>Id </th>
             <th>Oznaczenie</th>
+            <th>cell id</th>
         </tr>
     </thead>
     <tbody>
-    	{% for id, notation in ev3 %}
+    	
+    	{% for id in ev4 %}
         <tr>
-            <td>{{id}}</td>
-            <td>{{notation}}</td>
+            <td>{{id.id}}</td>
+            <td>{{id.notation}}</td>
+            <td>{{id.cell_id}}</td>
         </tr>
         {% endfor %}
         

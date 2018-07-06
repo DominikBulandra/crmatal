@@ -1,0 +1,12 @@
+list: $/dominik/deals/models/deal_type/columns.yaml
+modelClass: Dominik\Deals\Models\Deal_type
+title: Deals_type
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'dominik/deals/deals_type/update/:id'

@@ -8,6 +8,7 @@ use Redirect;
 use Input;
 use Auth;
 use View;
+use Cookie;
 use Config;
 use Cms\Classes\Page;
 class Projectslist extends ComponentBase
@@ -27,23 +28,23 @@ class Projectslist extends ComponentBase
 		$users2 = Db::table('users')
     	->join('users_projects', 'users.id', '=', 'users_projects.user_id')
     	->join('user_projects', 'user_projects.id', '=', 'users_projects.user_project_id')
-    	->select('user_projects.name', 'users.id')
+    	->select('user_projects.name','user_projects.code')
     	->where('users.id', $user->id)
-    	->lists('id', 'name');
+    	->lists('name','code');
 		}
 		$param=Input::get('idproj');
 		 	$places=db::table('dominik_projects_projects')
     	->join('dominik_projects_buildings', 'dominik_projects_projects.id', '=', 'dominik_projects_buildings.project_id')
     	->join('dominik_projects_cells', 'dominik_projects_cells.buildings_id', '=', 'dominik_projects_buildings.id')
     	->join('dominik_projects_places', 'dominik_projects_cells.id', '=', 'dominik_projects_places.cell_id')
-    	->select('dominik_projects_places.id', 'dominik_projects_places.notation')
-    	->where('dominik_projects_projects.id', '11')
-    	->lists('id', 'notation');
+    	->select('dominik_projects_places.id','dominik_projects_places.cell_id', 'dominik_projects_places.notation')
+    	->where('dominik_projects_projects.id', Cookie::get('name'))->get() 	;
    		$this->page['ev3'] = $places;
 		View::share('name', 'Steve');
 		View::share('siteName', 'OctoberCMS');
 		Config::set('siteid', '14');
 		View::share('names', 'SteveAdam');
+
 
 	
 		$roles = Db::table('dominik_projects_projects')->lists('id', 'notation');
@@ -62,6 +63,10 @@ class Projectslist extends ComponentBase
     $param=Input::get('idproj');
     View::share('name', 'Steve');
     $param2=Config::get('siteid');
+    Cookie::queue('name', $param, 60);
+    $projname=Input::get('projname');
+    Cookie::queue('projname', $projname, 60);
+    
 
 
 
@@ -72,13 +77,15 @@ class Projectslist extends ComponentBase
  	error_log('message here.');
  	$arr= array('Hello','World!','Beautiful','Day!');
 	$param3=implode(" ",$param2);
+	$value2 = Cookie::get('name');
 
  
 
 
     //return View::make('dominik.projects::test', array('idp', $param));
-    return Redirect::to('')->with(['message'=> $param,'p2test'=>$param3]);
+    return Redirect::to('')->with(['message'=> $param,'p2test'=>$value2]);
 	}
+	
   	public function loadList()
     {
 

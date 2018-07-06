@@ -29,6 +29,8 @@ jQuery(document).ready(function($){
             }
         }
     })
+     
+      
 
 
     function autoHideHeader() {
@@ -63,11 +65,7 @@ jQuery(document).ready(function($){
 
 
     });
-      $('#testbutton').on('click',function(){
-       alert("działa");
-
-
-    });
+    
      
      
 
@@ -78,9 +76,7 @@ jQuery(document).ready(function($){
 })(jQuery);
 $(document).ready( function () {
     var table= $('#table').DataTable();
+
 } );
 
- function SendProjectId()
- {
-        alert("działa");
-    }
+ 

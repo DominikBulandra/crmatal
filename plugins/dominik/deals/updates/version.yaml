@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dominik_deals_deal'
+    - builder_table_create_dominik_deals_deal.php
+1.0.3:
+    - 'Updated table dominik_deals_deal'
+    - builder_table_update_dominik_deals_deal.php
+1.0.4:
+    - 'Updated table dominik_deals_deal'
+    - builder_table_update_dominik_deals_deal_2.php
+1.0.5:
+    - 'Created table dominik_deals_deal_type'
+    - builder_table_create_dominik_deals_deal_type.php
+1.0.6:
+    - 'Updated table dominik_deals_deal_type'
+    - builder_table_update_dominik_deals_deal_type.php

@@ -1,0 +1,4 @@
+columns:
+    basket_id:
+        label: 'Id koszyka'
+        type: number

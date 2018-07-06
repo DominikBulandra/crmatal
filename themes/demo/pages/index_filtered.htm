@@ -45,13 +45,16 @@ use dominik\projects\Models\places;
         <tr>
             <th>Id </th>
             <th>Oznaczenie</th>
+            <th>cell id</th>
         </tr>
     </thead>
     <tbody>
-    	{% for id, notation in ev3 %}
+    	
+    	{% for id in ev3 %}
         <tr>
-            <td>{{id}}</td>
-            <td>{{notation}}</td>
+            <td>{{id.id}}</td>
+            <td>{{id.notation}}</td>
+            <td>{{id.cell_id}}</td>
         </tr>
         {% endfor %}
         

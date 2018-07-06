@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: 'Nazwa typu umowy'
+        span: auto
+        type: text
+    hash:
+        label: skrót
+        span: auto
+        type: text

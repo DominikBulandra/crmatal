@@ -1,0 +1,4 @@
+title: Deals
+modelClass: Dominik\Deals\Models\Deals
+toolbar:
+    buttons: reorder_toolbar

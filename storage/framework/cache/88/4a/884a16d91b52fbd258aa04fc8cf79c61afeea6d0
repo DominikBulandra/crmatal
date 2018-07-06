@@ -1,0 +1,23 @@
+1530867802a:1:{s:16:"places/cells.htm";a:5:{s:8:"fileName";s:16:"places/cells.htm";s:7:"content";s:399:"	<label>Klatka</label>
+	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
+				{% for cell in cells %}
+					<div class="field">
+						<div class="checkbox">
+						<label>
+							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
+							{{cell.notation}} {{cell.id}}</label>
+						</div>
+					</div>
+				{% endfor %}
+				{{ form_close() }}";s:5:"mtime";i:1520330720;s:6:"markup";s:398:"<label>Klatka</label>
+	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
+				{% for cell in cells %}
+					<div class="field">
+						<div class="checkbox">
+						<label>
+							<input type="checkbox" name="Filter[cells][]" value="{{ cell.id }}" />
+							{{cell.notation}} {{cell.id}}</label>
+						</div>
+					</div>
+				{% endfor %}
+				{{ form_close() }}";s:4:"code";N;}}

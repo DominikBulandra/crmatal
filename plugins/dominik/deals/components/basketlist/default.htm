@@ -1,0 +1,36 @@
+{% framework %}
+{% framework extras %}
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<div class="dropdown">
+  <div class="basket" data-toggle="dropdown" >
+  Koszyk
+  <div></div>
+  <i class="fa fa-shopping-cart"></i>'
+</div>
+  <!-- <button class="basket" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+    
+  Koszyk
+ 
+    
+  </button> -->
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2"  id="basketdiv">
+        <P>Zawartość koszyka:</P>
+        {{dump(ev3)}}
+            
+        {% for id in ev3 %}
+test
+
+
+ 
+             <P>{{id[1]}}</P>
+
+    <div class="dropdown-divider"></div>
+  
+
+
+{% endfor %}<!-- eDay -->
+
+  </div>
+</div>
+

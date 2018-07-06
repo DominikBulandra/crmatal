@@ -1,17 +1,19 @@
 {% framework %}
 {% framework extras %}
 <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button class="projlist" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Wybór Inwestycji
   </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		{% for d,eDay in ev %}
+    <div class="dropdown-menu ddmenu" aria-labelledby="dropdownMenuButton">
+		{% for code,name in ev %}
+
 
 
  
    	<form data-request="{{__SELF__}}::onSave">
-   	<button type="submit" data-request-confirm="Przełączyć inwestycję?" class="btn btn-default">{{eDay}} {{ d }}</button>
-   	<input type="Text" name="idproj" value={{eDay}} style="display: none">
+   	<button type="submit" data-request-confirm="Przełączyć inwestycję?" class="dropdown-button">{{name}}</button>
+   	<input type="Text" name="idproj" value={{code}} style="display: none">
+    <input type="Text" name="projname" value={{name}} style="display: none">
    </form>
 
     <div class="dropdown-divider"></div>

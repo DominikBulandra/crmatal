@@ -8,6 +8,7 @@ class Plugin extends PluginBase
     {
         return [
         'Dominik\deals\Components\Basketlist' => 'Basketlist',
+        'Dominik\deals\Components\Items' => 'Items',
         ];
     }
 

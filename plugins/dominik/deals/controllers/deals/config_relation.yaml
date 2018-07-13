@@ -1,0 +1,7 @@
+dealtype:
+  label: dealtype 
+  view: 
+    list: $/dominik/deals/models/deal_type/columns.yaml
+    toolbarButtons: create|delete
+  manage:
+    form: $/dominik/deals/models/deal_type/fields.yaml

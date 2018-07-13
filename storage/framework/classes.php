@@ -127,4 +127,6 @@
   'Dominik\\deals\\Components\\Basketlist' => 'plugins\\dominik\\deals\\components\\Basketlist.php',
   'dominik\\deals\\Controllers\\deals_type' => 'plugins\\dominik\\deals\\controllers\\deals_type.php',
   'Dominik\\Deals\\Models\\Deal_type' => 'plugins\\dominik\\deals\\models\\Deal_type.php',
+  'dominik\\deals\\Models\\deal_type' => 'plugins\\dominik\\deals\\models\\deal_type.php',
+  'Dominik\\deals\\Components\\Items' => 'plugins\\dominik\\deals\\components\\Items.php',
 );

@@ -31,7 +31,7 @@ class __TwigTemplate_8bdb531eb309148f6fb6095401b1f1c97e9406c86c92edadb1e2b8885b8
   <div class=\"basket\" data-toggle=\"dropdown\" >
   Koszyk
   <div></div>
-  <i class=\"fa fa-shopping-cart\"></i>'
+ <i class=\"fa fa-shopping-cart\"></i>
 </div>
   <!-- <button class=\"basket\" type=\"button\" id=\"dropdownMenuButton2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 
@@ -50,7 +50,7 @@ class __TwigTemplate_8bdb531eb309148f6fb6095401b1f1c97e9406c86c92edadb1e2b8885b8
         ";
         // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["ev3"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["items"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["id"]) {
             // line 22
             echo "test
@@ -73,7 +73,7 @@ class __TwigTemplate_8bdb531eb309148f6fb6095401b1f1c97e9406c86c92edadb1e2b8885b8
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 32
         echo "<!-- eDay -->
-
+ 
   </div>
 </div>
 
@@ -104,7 +104,7 @@ class __TwigTemplate_8bdb531eb309148f6fb6095401b1f1c97e9406c86c92edadb1e2b8885b8
   <div class=\"basket\" data-toggle=\"dropdown\" >
   Koszyk
   <div></div>
-  <i class=\"fa fa-shopping-cart\"></i>'
+ <i class=\"fa fa-shopping-cart\"></i>
 </div>
   <!-- <button class=\"basket\" type=\"button\" id=\"dropdownMenuButton2\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
 
@@ -117,7 +117,7 @@ class __TwigTemplate_8bdb531eb309148f6fb6095401b1f1c97e9406c86c92edadb1e2b8885b8
         <P>Zawartość koszyka:</P>
         {{dump(ev3)}}
             
-        {% for id in ev3 %}
+        {% for id in items %}
 test
 
 
@@ -129,7 +129,7 @@ test
 
 
 {% endfor %}<!-- eDay -->
-
+ 
   </div>
 </div>
 

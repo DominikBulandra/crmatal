@@ -3,3 +3,9 @@ fields:
         label: 'Id koszyka'
         span: auto
         type: text
+    dealt:
+        label: 'Typ umowy'
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation

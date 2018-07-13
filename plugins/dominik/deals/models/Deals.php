@@ -25,4 +25,14 @@ class Deals extends Model
      * @var string The database table used by the model.
      */
     public $table = 'dominik_deals_deal';
+
+    public $belongsTo = [
+
+    'dealt' =>[
+            'dominik\deals\Models\deal_type',
+            'table' => 'dominik_projects_deal_type',
+            'order' =>      'name'
+
+    ]
+    ];
 }

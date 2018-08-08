@@ -129,4 +129,9 @@
   'Dominik\\Deals\\Models\\Deal_type' => 'plugins\\dominik\\deals\\models\\Deal_type.php',
   'dominik\\deals\\Models\\deal_type' => 'plugins\\dominik\\deals\\models\\deal_type.php',
   'Dominik\\deals\\Components\\Items' => 'plugins\\dominik\\deals\\components\\Items.php',
+  'Dominik\\deals\\Components\\Dealsview' => 'plugins\\dominik\\deals\\components\\Dealsview.php',
+  'dominik\\clients\\Plugin' => 'plugins\\dominik\\clients\\Plugin.php',
+  'dominik\\clients\\Controllers\\client' => 'plugins\\dominik\\clients\\controllers\\client.php',
+  'Dominik\\Clients\\Models\\Client' => 'plugins\\dominik\\clients\\models\\Client.php',
+  'Dominik\\clients\\Components\\Create' => 'plugins\\dominik\\clients\\components\\Create.php',
 );

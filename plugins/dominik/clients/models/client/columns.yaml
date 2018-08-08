@@ -1,0 +1,16 @@
+columns:
+    firstname:
+        label: Imię
+        type: text
+        searchable: true
+        sortable: true
+    lastname:
+        label: Nazwisko
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: email
+        type: text
+        searchable: true
+        sortable: true

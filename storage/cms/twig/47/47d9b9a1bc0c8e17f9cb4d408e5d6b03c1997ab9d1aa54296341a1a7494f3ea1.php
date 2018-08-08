@@ -16,7 +16,6 @@ class __TwigTemplate_b42a0305cecaaaff47159002418f7b7f14b802b3a849dbbe3e101a20e98
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<H1>Zawartość koszyka</H1>";
         $context['__cms_component_params'] = [];
         echo $this->env->getExtension('Cms\Twig\Extension')->componentFunction("Items"        , $context['__cms_component_params']        );
         unset($context['__cms_component_params']);
@@ -39,6 +38,6 @@ class __TwigTemplate_b42a0305cecaaaff47159002418f7b7f14b802b3a849dbbe3e101a20e98
 
     public function getSourceContext()
     {
-        return new Twig_Source("<H1>Zawartość koszyka</H1>{% component 'Items' %}", "C:\\xampp\\htdocs\\crm/themes/demo/pages/basket.htm", "");
+        return new Twig_Source("{% component 'Items' %}", "C:\\xampp\\htdocs\\crm/themes/demo/pages/basket.htm", "");
     }
 }

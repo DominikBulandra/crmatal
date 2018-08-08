@@ -1,5 +1,5 @@
 <?php 
-class Cms5b3dc8507dc6b504403407_419121c2062db43ac154ffeaee4f1ec8Class extends \Cms\Classes\LayoutCode
+class Cms5b6848511782d886130175_afd9ce6187121d98e434665da209beb0Class extends \Cms\Classes\LayoutCode
 {
 public function prepareVars() {
 

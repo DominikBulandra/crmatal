@@ -1,4 +1,4 @@
-1531404150a:1:{s:9:"cells.htm";a:12:{s:8:"fileName";s:9:"cells.htm";s:7:"content";s:1678:"title = "Komórki"
+1533712300a:1:{s:9:"cells.htm";a:12:{s:8:"fileName";s:9:"cells.htm";s:7:"content";s:3387:"title = "Komórki"
 url = "/cells"
 layout = "default"
 is_hidden = 0
@@ -45,6 +45,7 @@ use dominik\projects\Models\places;
             <th>Id </th>
             <th>Oznaczenie</th>
             <th>cell id</th>
+            <th>Koszyk</th>
         </tr>
     </thead>
     <tbody>
@@ -54,6 +55,7 @@ use dominik\projects\Models\places;
             <td>{{id.id}}</td>
             <td>{{id.notation}}</td>
             <td>{{id.cell_id}}</td>
+            <td> <button id="addc" onclick="addCookie('{{id.id}}','{{id.notation}}')">dodaj do koszyka</button></td>
         </tr>
         {% endfor %}
         
@@ -67,8 +69,74 @@ use dominik\projects\Models\places;
 $(document).ready( function () {
     var table= $('#table').DataTable();
 } );
+function delCookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+ 
+  alert("usunięto");
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+  for (var i = 0, len = res.length; i < len; i++) {
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<button onClick="delCookie(\'' + res[i] + '\')" />Usuń</button>';
+     
+  html += ("<P>-------</P>");
+    }
+  }
+  $('#basketdiv').html(html);
+}
+function addCookie(c,notation){
+  
+  document.cookie = "cell"+c+"="+notation;
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	 
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+ html += ("<P>Komórki:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("cell"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+html += ("<P>Parking/Garaż:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("garage"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+$('#basketdiv').html(html);
+  
+alert("dodano do koszyka "+c);
+}
 	
-</script>";s:5:"mtime";i:1522068928;s:6:"markup";s:678:"{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Cells </h2>
+</script>
+
+
+";s:5:"mtime";i:1532956752;s:6:"markup";s:2381:"{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Cells </h2>
 
 <table id="table" class="display">
     <thead>
@@ -76,6 +144,7 @@ $(document).ready( function () {
             <th>Id </th>
             <th>Oznaczenie</th>
             <th>cell id</th>
+            <th>Koszyk</th>
         </tr>
     </thead>
     <tbody>
@@ -85,6 +154,7 @@ $(document).ready( function () {
             <td>{{id.id}}</td>
             <td>{{id.notation}}</td>
             <td>{{id.cell_id}}</td>
+            <td> <button id="addc" onclick="addCookie('{{id.id}}','{{id.notation}}')">dodaj do koszyka</button></td>
         </tr>
         {% endfor %}
         
@@ -98,6 +168,69 @@ $(document).ready( function () {
 $(document).ready( function () {
     var table= $('#table').DataTable();
 } );
+function delCookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+ 
+  alert("usunięto");
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+  for (var i = 0, len = res.length; i < len; i++) {
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<button onClick="delCookie(\'' + res[i] + '\')" />Usuń</button>';
+     
+  html += ("<P>-------</P>");
+    }
+  }
+  $('#basketdiv').html(html);
+}
+function addCookie(c,notation){
+  
+  document.cookie = "cell"+c+"="+notation;
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	 
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+ html += ("<P>Komórki:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("cell"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+html += ("<P>Parking/Garaż:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("garage"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+$('#basketdiv').html(html);
+  
+alert("dodano do koszyka "+c);
+}
 	
 </script>";s:4:"code";s:828:"use dominik\projects\Models\places;
 	use dominik\projects\Models\cells;

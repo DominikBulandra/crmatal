@@ -1,0 +1,38 @@
+1533712060a:1:{s:11:"clients.htm";a:13:{s:8:"fileName";s:11:"clients.htm";s:7:"content";s:626:"title = "Klienci"
+url = "/clients"
+layout = "default"
+is_hidden = 0
+
+[menu]
+
+[session]
+security = "all"
+
+[Projectslist]
+[Create]
+
+==
+<div class="row">
+        <div class="col-sm-2" style="margin-top: 100px" >
+        	<BUTTON class="dealsmenu" data-request="onNewClick">Dodaj Klienta</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onDeveloperClick">Moi Klienci</BUTTON>
+            <BUTTON class="dealsmenu" data-request="onAllClick">Wszyscy Klienci</BUTTON>
+        	
+
+        </div>
+        <div class="col-sm-9 umowy" style="height: auto;"><div id="myDiv2"> 
+</div></div>
+    </div>
+
+
+";s:5:"mtime";i:1533711436;s:6:"markup";s:473:"<div class="row">
+        <div class="col-sm-2" style="margin-top: 100px" >
+        	<BUTTON class="dealsmenu" data-request="onNewClick">Dodaj Klienta</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onDeveloperClick">Moi Klienci</BUTTON>
+            <BUTTON class="dealsmenu" data-request="onAllClick">Wszyscy Klienci</BUTTON>
+        	
+
+        </div>
+        <div class="col-sm-9 umowy" style="height: auto;"><div id="myDiv2"> 
+</div></div>
+    </div>";s:4:"code";N;s:5:"title";s:7:"Klienci";s:3:"url";s:8:"/clients";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:4:"menu";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:12:"Projectslist";a:0:{}s:6:"Create";a:0:{}}}

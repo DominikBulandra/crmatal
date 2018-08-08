@@ -1,0 +1,10 @@
+name: Client
+form: $/dominik/clients/models/client/fields.yaml
+modelClass: Dominik\Clients\Models\Client
+defaultRedirect: dominik/clients/client
+create:
+    redirect: 'dominik/clients/client/update/:id'
+    redirectClose: dominik/clients/client
+update:
+    redirect: dominik/clients/client
+    redirectClose: dominik/clients/client

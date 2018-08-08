@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table dominik_clients_client'
+    - builder_table_create_dominik_clients_client.php
+1.0.3:
+    - 'Updated table dominik_clients_client'
+    - builder_table_update_dominik_clients_client.php
+1.0.4:
+    - 'Updated table dominik_clients_client'
+    - builder_table_update_dominik_clients_client_2.php
+1.0.5:
+    - 'Updated table dominik_clients_client'
+    - builder_table_update_dominik_clients_client_3.php

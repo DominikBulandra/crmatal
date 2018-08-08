@@ -1,4 +1,4 @@
-1531404150a:1:{s:14:"apartments.htm";a:12:{s:8:"fileName";s:14:"apartments.htm";s:7:"content";s:9304:"title = "Lokale"
+1533712300a:1:{s:14:"apartments.htm";a:12:{s:8:"fileName";s:14:"apartments.htm";s:7:"content";s:9901:"title = "Lokale"
 url = "/apartments"
 layout = "default"
 is_hidden = 0
@@ -263,8 +263,33 @@ function addCookie(c,notation){
   var y = document.cookie;
   var html="";
   var res = y.split(";");
-  for (var i = 0, len = res.length; i < len; i++) {
+   for (var i = 0, len = res.length; i < len; i++) {
+     
     if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+ html += ("<P>Komórki:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+    
+    if(res[i].includes("cell"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+html += ("<P>Parking/Garaż:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+    
+    if(res[i].includes("garage"))
     {
       html += (res[i]);
       html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
@@ -278,7 +303,7 @@ $('#basketdiv').html(html);
   
 alert("dodano do koszyka "+c);
 }
-</script>";s:5:"mtime";i:1529501249;s:6:"markup";s:8296:"{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Apartments </h2>
+</script>";s:5:"mtime";i:1533206813;s:6:"markup";s:8893:"{% component 'session' %}<h2 class="ui header" style="margin-top:40px;">Apartments </h2>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -504,8 +529,33 @@ function addCookie(c,notation){
   var y = document.cookie;
   var html="";
   var res = y.split(";");
-  for (var i = 0, len = res.length; i < len; i++) {
+   for (var i = 0, len = res.length; i < len; i++) {
+     
     if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+ html += ("<P>Komórki:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+    
+    if(res[i].includes("cell"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+html += ("<P>Parking/Garaż:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+    
+    if(res[i].includes("garage"))
     {
       html += (res[i]);
       html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';

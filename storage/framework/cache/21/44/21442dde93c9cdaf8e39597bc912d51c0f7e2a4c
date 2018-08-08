@@ -1,4 +1,4 @@
-1531404150a:1:{s:9:"umowy.htm";a:12:{s:8:"fileName";s:9:"umowy.htm";s:7:"content";s:150:"title = "Umowy"
+1533712300a:1:{s:9:"umowy.htm";a:13:{s:8:"fileName";s:9:"umowy.htm";s:7:"content";s:782:"title = "Umowy"
 url = "/umowy"
 layout = "default"
 is_hidden = 0
@@ -9,5 +9,47 @@ is_hidden = 0
 security = "all"
 
 [Projectslist]
+
+[Dealsview]
 ==
-<H1>Moje umowy</H1>";s:5:"mtime";i:1530862814;s:6:"markup";s:19:"<H1>Moje umowy</H1>";s:4:"code";N;s:5:"title";s:5:"Umowy";s:3:"url";s:6:"/umowy";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:4:"menu";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:12:"Projectslist";a:0:{}}}
+<div class="row">
+        <div class="col-sm-2" style="margin-top: 100px" >
+        	<BUTTON class="dealsmenu" data-request="onReservationClick">Umowy Rezerwacyjne</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onDeveloperClick">Umowy Deweloperskie</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onSellClick">Umowy Sprzedaży</BUTTON>
+        	
+
+        </div>
+        <div class="col-sm-9 umowy"><div id="myDiv"> 
+</div></div>
+    </div>
+
+
+<script type="text/javascript">    	
+  	function onRefreshTime()
+	{
+    return [
+        '#myDiv' => $this->renderPartial('deals/UR')
+    ];
+	}
+</script>";s:5:"mtime";i:1533552189;s:6:"markup";s:636:"<div class="row">
+        <div class="col-sm-2" style="margin-top: 100px" >
+        	<BUTTON class="dealsmenu" data-request="onReservationClick">Umowy Rezerwacyjne</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onDeveloperClick">Umowy Deweloperskie</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onSellClick">Umowy Sprzedaży</BUTTON>
+        	
+
+        </div>
+        <div class="col-sm-9 umowy"><div id="myDiv"> 
+</div></div>
+    </div>
+
+
+<script type="text/javascript">    	
+  	function onRefreshTime()
+	{
+    return [
+        '#myDiv' => $this->renderPartial('deals/UR')
+    ];
+	}
+</script>";s:4:"code";N;s:5:"title";s:5:"Umowy";s:3:"url";s:6:"/umowy";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:4:"menu";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:12:"Projectslist";a:0:{}s:9:"Dealsview";a:0:{}}}

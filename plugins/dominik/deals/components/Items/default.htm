@@ -2,8 +2,8 @@
 {% framework extras %}
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-   
-
+<div  id="darktable">   
+<H1>Zawartość koszyka</H1>
 <div class="divTable darkTable">
 <div class="divTableHeading">
 <div class="divTableRow">
@@ -14,16 +14,18 @@
 </div>
 </div>
 <div class="divTableBody">
-{% for id,id2 in items if 'basket' in id  %}
+<!-- {{dump(items2)}}
+{{dump(items)}} -->
+{% for id,id2 in items2  %}
 
 
 <div class="divTableRow">
     
-<div class="divTableCell">{{id}}</div>
+<div class="divTableCell">{{id2.notation}}</div>
 
 
     
-<div class="divTableCell">Cena</div>
+<div class="divTableCell">{{id2.price}}</div>
 <div class="divTableCell">m2</div>
 <div class="divTableCell">właściwość</div>
 </div>
@@ -50,7 +52,7 @@
 </div>
 </div>
 <div class="divTableBody">
-{% for id,id2 in items if 'basket' in id  %}
+{% for id,id2 in items if 'cell' in id  %}
 
 
 <div class="divTableRow">
@@ -87,7 +89,7 @@
 </div>
 </div>
 <div class="divTableBody">
-{% for id,id2 in items if 'basket' in id  %}
+{% for id,id2 in items if 'garage' in id  %}
 
 
 <div class="divTableRow">
@@ -108,7 +110,11 @@
 <div class="divTableCell">foot2</div>
 <div class="divTableCell">foot3</div>
 <div class="divTableCell">foot4</div>
+
+</div>
+
 </div>
 </div>
+<button class="reservation"  data-request="onNextClick">Utwórz umowę rezerwacyjną</button>
 </div>
 </div>

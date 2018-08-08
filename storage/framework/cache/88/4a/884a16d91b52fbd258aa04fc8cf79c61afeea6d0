@@ -1,4 +1,4 @@
-1531404157a:1:{s:16:"places/cells.htm";a:5:{s:8:"fileName";s:16:"places/cells.htm";s:7:"content";s:399:"	<label>Klatka</label>
+1533709297a:1:{s:16:"places/cells.htm";a:5:{s:8:"fileName";s:16:"places/cells.htm";s:7:"content";s:399:"	<label>Klatka</label>
 	{{ form_ajax('onFilterPlaces',{ update: { 'places/places': '#partialPlaces'}})}}
 				{% for cell in cells %}
 					<div class="field">

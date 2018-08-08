@@ -1,0 +1,11 @@
+plugin:
+    name: 'dominik.clients::lang.plugin.name'
+    description: 'dominik.clients::lang.plugin.description'
+    author: Dominik
+    icon: oc-icon-child
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Klienci
+        url: dominik/clients/client
+        icon: icon-users

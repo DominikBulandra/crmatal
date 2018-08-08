@@ -1,0 +1,4 @@
+title: Client
+modelClass: Dominik\Clients\Models\Client
+toolbar:
+    buttons: reorder_toolbar

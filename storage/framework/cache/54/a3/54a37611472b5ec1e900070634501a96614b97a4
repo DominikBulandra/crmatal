@@ -1,4 +1,4 @@
-1531404150a:1:{s:10:"basket.htm";a:13:{s:8:"fileName";s:10:"basket.htm";s:7:"content";s:195:"title = "basket"
+1533712300a:1:{s:10:"basket.htm";a:13:{s:8:"fileName";s:10:"basket.htm";s:7:"content";s:167:"title = "basket"
 url = "/basket"
 layout = "default"
 is_hidden = 0
@@ -12,4 +12,4 @@ security = "all"
 
 [Items]
 ==
-<H1>Zawartość koszyka</H1>{% component 'Items' %}";s:5:"mtime";i:1531387511;s:6:"markup";s:51:"<H1>Zawartość koszyka</H1>{% component 'Items' %}";s:4:"code";N;s:5:"title";s:6:"basket";s:3:"url";s:7:"/basket";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:4:"menu";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:12:"Projectslist";a:0:{}s:5:"Items";a:0:{}}}
+{% component 'Items' %}";s:5:"mtime";i:1533559143;s:6:"markup";s:23:"{% component 'Items' %}";s:4:"code";N;s:5:"title";s:6:"basket";s:3:"url";s:7:"/basket";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:4:"menu";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:12:"Projectslist";a:0:{}s:5:"Items";a:0:{}}}

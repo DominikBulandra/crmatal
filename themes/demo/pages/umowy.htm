@@ -9,5 +9,27 @@ is_hidden = 0
 security = "all"
 
 [Projectslist]
+
+[Dealsview]
 ==
-<H1>Moje umowy</H1>
+<div class="row">
+        <div class="col-sm-2" style="margin-top: 100px" >
+        	<BUTTON class="dealsmenu" data-request="onReservationClick">Umowy Rezerwacyjne</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onDeveloperClick">Umowy Deweloperskie</BUTTON>
+        	<BUTTON class="dealsmenu" data-request="onSellClick">Umowy Sprzedaży</BUTTON>
+        	
+
+        </div>
+        <div class="col-sm-9 umowy"><div id="myDiv"> 
+</div></div>
+    </div>
+
+
+<script type="text/javascript">    	
+  	function onRefreshTime()
+	{
+    return [
+        '#myDiv' => $this->renderPartial('deals/UR')
+    ];
+	}
+</script>

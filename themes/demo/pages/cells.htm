@@ -45,6 +45,7 @@ use dominik\projects\Models\places;
             <th>Id </th>
             <th>Oznaczenie</th>
             <th>cell id</th>
+            <th>Koszyk</th>
         </tr>
     </thead>
     <tbody>
@@ -54,6 +55,7 @@ use dominik\projects\Models\places;
             <td>{{id.id}}</td>
             <td>{{id.notation}}</td>
             <td>{{id.cell_id}}</td>
+            <td> <button id="addc" onclick="addCookie('{{id.id}}','{{id.notation}}')">dodaj do koszyka</button></td>
         </tr>
         {% endfor %}
         
@@ -67,5 +69,70 @@ use dominik\projects\Models\places;
 $(document).ready( function () {
     var table= $('#table').DataTable();
 } );
+function delCookie( name ) {
+  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+ 
+  alert("usunięto");
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+  for (var i = 0, len = res.length; i < len; i++) {
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<button onClick="delCookie(\'' + res[i] + '\')" />Usuń</button>';
+     
+  html += ("<P>-------</P>");
+    }
+  }
+  $('#basketdiv').html(html);
+}
+function addCookie(c,notation){
+  
+  document.cookie = "cell"+c+"="+notation;
+  var y = document.cookie;
+  var html="";
+  var res = y.split(";");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	 
+    if(res[i].includes("basket"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+ html += ("<P>Komórki:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("cell"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+html += ("<P>Parking/Garaż:</P>");
+   for (var i = 0, len = res.length; i < len; i++) {
+  	
+    if(res[i].includes("garage"))
+    {
+      html += (res[i]);
+      html +=  '<input type="button" onClick="delCookie(\'' + res[i] + '\')" />';
+     
+  html += ("<P>-------</P>");
+    }
+ 
+}
+$('#basketdiv').html(html);
+  
+alert("dodano do koszyka "+c);
+}
 	
 </script>
+
+

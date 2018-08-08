@@ -1,0 +1,13 @@
+fields:
+    firstname:
+        label: Imię
+        span: auto
+        type: text
+    lastname:
+        label: Nazwisko
+        span: auto
+        type: text
+    email:
+        label: email
+        span: auto
+        type: text

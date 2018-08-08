@@ -21,7 +21,10 @@ class Items extends ComponentBase
 			'description' => 'zawartość koszyka na stronie',
 		];
 }
-
+function onNextClick()
+{
+    return ['#darktable' => $this->renderPartial('deals/CreateReservation')];
+}
 	public function onRun() {
 		$this->addCss('/plugins/dominik/deals/assets/items.css');
 
@@ -31,9 +34,21 @@ class Items extends ComponentBase
 
 		
 		$users2 = Cookie::get();
+		$basket = array();
+		$keys = array_keys($users2);
+		foreach ($keys as $key) {
+			if (strpos($key, "basket")!== false) {
+			// 	array_push($basket, $key);
+				
+			// }
+				$delstr= substr($key, 6,5);
+			array_push($basket, $delstr);}
+		}
+		$locals=Db::table('dominik_projects_places')->select('id','notation','price','staircases_id')->wherein('id', $basket)->get()->toArray();
+
 
 		$this->page['items'] = $users2;
-		
+		$this->page['items2'] = $locals;
 		
 	}
 	
